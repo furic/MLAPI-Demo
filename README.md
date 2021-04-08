@@ -38,7 +38,7 @@ Each prefab contains a RPC calls as:
 - `SyncClientRpc()`: Called from server to client only.
 
 ## Network Variable
-Each prefab contains a `NetworkVariableInt` and change it every 30s. They can be checked on Editor inspector. This demostrate how MLAPI sync value automatically.
+Each prefab contains a `NetworkVariableInt` and change it every 30s. Their value can be checked on Editor inspector. This demostrates how MLAPI sync value automatically.
 
 ## Voice Chat
-This demo use [Steam Voice](https://partner.steamgames.com/doc/features/voice) to detech and send voice, see (`MultiplayerDemoPlayer`)[Assets/Scripts/MultiplayerDemoPlayer.cs] for more details.
+This demo use [Steam Voice](https://partner.steamgames.com/doc/features/voice) to detech and send voice, see [`MultiplayerDemoPlayer`](Assets/Scripts/MultiplayerDemoPlayer.cs) for more details.
