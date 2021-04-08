@@ -27,18 +27,18 @@ Show only after connected as host or client, here you can:
 
 ## Prefabs
 There are 3 prefabs for different demo purposes:
-- `MultiplayerDemoPlayer`: The player prefab, each client has its own one.
-- `MultiplayerDemoSceneObject`: An object spawned with the scene, MLAPI reference them using soft-sync, owned by host.
-- `MultiplayerDemoSpawnedObject`: An object spawned after connection, owned by host.
+- *MultiplayerDemoPlayer*: The player prefab, each client has its own one.
+- *MultiplayerDemoSceneObject*: An object spawned with the scene, MLAPI reference them using soft-sync, owned by host.
+- *MultiplayerDemoSpawnedObject*: An object spawned after connection, owned by host.
 
 ## RPC Calls
 Each prefab contains a RPC calls as:
 - `OnSyncClick()`: Called on clicking the button, execute either `SyncServerRpc` or `SyncClientRpc`.
-- `SyncServerRpc`: Called from client to server only.
-- `SyncClientRpc`: Called from server to client only.
+- `SyncServerRpc()`: Called from client to server only.
+- `SyncClientRpc()`: Called from server to client only.
 
 ## Network Variable
 Each prefab contains a `NetworkVariableInt` and change it every 30s. They can be checked on Editor inspector. This demostrate how MLAPI sync value automatically.
 
 ## Voice Chat
-This demo use [Steam Voice](https://partner.steamgames.com/doc/features/voice) to detech and send voice, see (`MultiplayerDemoPlayer`)[Assets/Scripts/MultiplayerDemoPlayer] for more details.
+This demo use [Steam Voice](https://partner.steamgames.com/doc/features/voice) to detech and send voice, see (`MultiplayerDemoPlayer`)[Assets/Scripts/MultiplayerDemoPlayer.cs] for more details.
