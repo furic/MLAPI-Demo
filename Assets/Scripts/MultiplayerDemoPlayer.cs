@@ -16,8 +16,9 @@ namespace VRCade.Multiplayer.Demo
 			audioSource = GetComponent<AudioSource>();
 		}
 
-		void Start()
+		public override void NetworkStart()
 		{
+			Debug.Log("MultiplayerDemoPlayer:NetworkStart - IsLocalPlayer=" + IsLocalPlayer);
 			if (IsLocalPlayer) {
 				myPlayer = this;
 				SteamUser.StartVoiceRecording(); // Start recording automatically
@@ -42,13 +43,13 @@ namespace VRCade.Multiplayer.Demo
 		[ServerRpc]
 		void SyncServerRpc()
 		{
-			Debug.Log("MultiplayerDemoPlayer:ServerSyncRpc");
+			Debug.Log("MultiplayerDemoPlayer:SyncServerRpc");
 		}
 
 		[ClientRpc]
 		void SyncClientRpc()
 		{
-			Debug.Log("MultiplayerDemoPlayer:ClientSyncRpc");
+			Debug.Log("MultiplayerDemoPlayer:SyncClientRpc");
 		}
 
 		void Update()

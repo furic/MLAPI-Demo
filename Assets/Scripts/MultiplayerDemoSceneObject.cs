@@ -18,14 +18,15 @@ namespace VRCade.Multiplayer.Demo
 			Instance = this;
 		}
 
-		void Start()
+		public override void NetworkStart()
 		{
+			Debug.Log("MultiplayerDemoSceneObject:NetworkStart");
 			if (IsServer) {
-				InvokeRepeating(nameof(TestSycnedVar), 10, 30);
+				InvokeRepeating(nameof(ChangeNetworkVariableInt), 10, 30);
 			}
 		}
 
-		void TestSycnedVar()
+		void ChangeNetworkVariableInt()
 		{
 			networkVariableInt.Value = Random.Range(1, 999);
 		}
@@ -43,13 +44,13 @@ namespace VRCade.Multiplayer.Demo
 		[ServerRpc(RequireOwnership = false)]
 		void SyncServerRpc()
 		{
-			Debug.Log("MultiplayerDemoSceneObject:ServerSyncRpc");
+			Debug.Log("MultiplayerDemoSceneObject:SyncServerRpc");
 		}
 
 		[ClientRpc]
 		void SyncClientRpc()
 		{
-			Debug.Log("MultiplayerDemoSceneObject:ClientSyncRpc");
+			Debug.Log("MultiplayerDemoSceneObject:SyncClientRpc");
 		}
 
 	}
